@@ -2,7 +2,7 @@
 # 检查叮咚买菜是否有可配送时段,有则通过Bark推送
 
 # (*)请填充BarkId
-barkId=""
+barkId="4hAHqhZkt7bymkY8Pis7EK"
 
 while :; do
 
@@ -23,7 +23,7 @@ availableCount=`cat tmp.json | jq -r '.data[0].time[0].times[].disableType' | gr
 
 if [[ $availableCount -gt 0 ]]; then
     echo "🎉 恭喜 发现可用的配送时段 请尽快下单!"
-    curl "https://api.day.app/$barkId/叮咚买菜有可用配送时段请尽快下单/"
+    curl "http://129.146.185.129:8080/$barkId/叮咚买菜有可用配送时段请尽快下单/"
     exit 0
 fi
 
